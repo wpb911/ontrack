@@ -26,11 +26,11 @@ This app will allow a user to be able to view, create and track daily workouts. 
     [inRHYTHM Heroku Link](https://fast-castle-93714.herokuapp.com/?)
 
   ## Questions
-  GitHub profiles: 
+  GitHub profile: 
     * https://github.com/wpb911
     
   
-  Contact us at our emails on our respective github with any additional questions.
+  Contact me at wpb911@gmail.com with any additional questions.
 
 
   ## License
