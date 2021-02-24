@@ -38,14 +38,15 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", { use
 
 app.get("/api/workouts", (req, res) => {
   db.Workowt.find({})
-    .then(dbWorkout => {
+    .then(dbWorkout => {      
       res.json(dbWorkout);
-      //console.log(dbWorkout);
+      console.log(dbWorkout);
     })
     .catch(err => {
       res.json(err);
     });
 });
+
 
 app.get("/api/workouts/range", (req, res) => {
   db.Workowt.find({})
@@ -60,7 +61,7 @@ app.get("/api/workouts/range", (req, res) => {
 
 app.post("/api/workouts", ({ body }, res) => {
   db.Workowt.create(body)
-    .then(({ _id }) => db.Workowt.findOneAndUpdate({}, { $push: { workowts: _id } }, { new: true }))
+    .then(({ _id }) => db.Workowt.insertOne(body))
     .then(dbWorkout => {
       res.json(dbWorkout);
     })
@@ -68,6 +69,21 @@ app.post("/api/workouts", ({ body }, res) => {
       res.json(err);
     });
 });
+
+
+
+
+
+// app.post("/api/workouts", ({ body }, res) => {
+//   db.Workowt.create(body)
+//     .then(({ _id }) => db.Workowt.findOneAndUpdate({}, { $push: { workowts: _id } }, { new: true }))
+//     .then(dbWorkout => {
+//       res.json(dbWorkout);
+//     })
+//     .catch(err => {
+//       res.json(err);
+//     });
+// });
 
 app.put("/api/workouts/:id", ({ params }, res) => {
   db.Workowt.findOneAndUpdate(
