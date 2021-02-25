@@ -23,7 +23,7 @@ This app will allow a user to be able to view, create and track daily workouts. 
       [Sample ontrack app Screenshot](ontrack.png) 
  
   Live deployed link here:
-    [inRHYTHM Heroku Link](https://fast-castle-93714.herokuapp.com/?)
+    [ontrack Heroku Link](https://fast-castle-93714.herokuapp.com/?)
 
   ## Questions
   GitHub profile: 
